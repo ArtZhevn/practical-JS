@@ -31,10 +31,8 @@ const modals = () => {
             }
         })
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                if (!modal.classList.contains('hidden')) {
-                    closeModal();
-                }
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
             // document.body.classList.remove('model-open');
             }
         });
