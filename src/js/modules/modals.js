@@ -1,11 +1,11 @@
 const modals = () => {
-    function bindModal(triggerSelector, modalSelector, closeSelector) {
-        const trigger = document.querySelectorAll(triggerSelector),
-            modal = document.querySelector(modalSelector),
-            close = document.querySelector(closeSelector);
+    const bindModal = (triggerSelector, modalSelector, closeSelector) => {
+        const triggers = document.querySelectorAll(triggerSelector);
+        const modal = document.querySelector(modalSelector);
+        const close = document.querySelector(closeSelector);
 
-        trigger.forEach(item => {
-            item.addEventListener('click', (e) => {
+        triggers.forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
                 if (e.target) {
                     e.preventDefault();
                 }
@@ -15,23 +15,32 @@ const modals = () => {
                 // document.body.classList.add('modal-open');
             });
         });
-
-        close.addEventListener('click', () => {
+        const closeModal = () => {
             modal.style.display = "none";
             document.body.style.overflow = "";
+        }
+        close.addEventListener('click', () => {
+            closeModal();
             // document.body.classList.remove('model-open');
         });
 
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
-                modal.style.display = "none";
-                document.body.style.overflow = "";
+                closeModal();
                 // document.body.classList.remove('model-open');
             }
         })
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                if (!modal.classList.contains('hidden')) {
+                    closeModal();
+                }
+            // document.body.classList.remove('model-open');
+            }
+        });
     }
-        function showModalByTime(selector, time) {
-            setTimeout(function() {
+        const showModalByTime = (selector, time) => {
+            setTimeout(() => {
                 document.querySelector(selector).style.display = 'block';
                 document.body.style.overflow = "hidden";
             }, time);
@@ -43,3 +52,4 @@ const modals = () => {
 };
 
 export default modals;
+
