@@ -1,4 +1,4 @@
-const tabs = (headerSelector, tabSelector, contentSelector, activeClass) => {
+export const tabs = ({ headerSelector, tabSelector, contentSelector, activeClass }) => {
     const header = document.querySelector(headerSelector);
     const tabsArr = document.querySelectorAll(tabSelector);
     const contentArr = document.querySelectorAll(contentSelector);
@@ -35,5 +35,3 @@ const tabs = (headerSelector, tabSelector, contentSelector, activeClass) => {
         }
     });
 };
-
-export default tabs;
