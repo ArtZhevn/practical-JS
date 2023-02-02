@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
         activeClass: 'after_click'
     });
     tabs({
-        headerSelector:  '.balcon_icons',
+        headerSelector: '.balcon_icons',
         tabSelector: '.balcon_icons_img',
         contentSelector: '.big_img > img',
         activeClass: 'do_image_more',

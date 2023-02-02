@@ -31,13 +31,14 @@ export const modals = () => {
 
         close.addEventListener('click', () => {
             closeWindows();
+            
             closeModal();
             // document.body.classList.remove('model-open');
         });
 
         modal.addEventListener('click', (e) => {
-            closeWindows();
             if (e.target === modal && closeClickOverlay) {
+                closeWindows();
                 closeModal();
                 // document.body.classList.remove('model-open');
             }
@@ -59,7 +60,7 @@ export const modals = () => {
         bindModal({
             triggerSelector: '.popup_engineer_btn',
             modalSelector: '.popup_engineer', 
-            closeSelector: '.popup_engineer .popup_close',
+            closeSelector: '.popup_engineer .popup_close'
         });        
         bindModal({
             triggerSelector: '.phone_link', 
