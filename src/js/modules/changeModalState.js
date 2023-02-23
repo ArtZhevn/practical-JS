@@ -18,17 +18,11 @@ export const changeModalState = (state) => {
                         state[prop] = i;
                         break;
                     case 'INPUT':
-                        if (elem.getAttribute('type') === 'radio') {
-                            state[prop] = i === 0 ? 'Холодное' : state[prop] = 'Тёплое';
-                    //         elems.forEach((box, j) => {
-                    //             box.checked = false;
-                    //             if (i === j) {
-                    //                 box.checked = true;
-                    //             }
-                    //         });
-                        } else {
+                        // if (elem.getAttribute('type') === 'radio') {
+                        //     state[prop] = i === 0 ? 'Холодное' : state[prop] = 'Тёплое';
+                        // } else {
                             state[prop] = elem.value;
-                        }
+                        // }
                         break;
                     case 'SELECT':
                         state[prop] = elem.value;
