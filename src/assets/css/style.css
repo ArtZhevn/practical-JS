@@ -1022,7 +1022,11 @@ textarea:focus {
 }
 
 .popup_calc_profile_content .checkbox {
-  display: none;
+  width: 0;
+  height: 0;
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
 }
 
 .popup_calc_profile_content .checkbox-custom {
