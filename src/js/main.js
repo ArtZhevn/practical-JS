@@ -1,13 +1,13 @@
 import './slider';
-import { modals, tabs, forms, changeModalState } from './modules/';
+import { modals, tabs, forms, changeModalState, timer } from './modules/';
 
 window.addEventListener('DOMContentLoaded', () => {
     'use strict';
 
     const modalState = {};
+    const deadline = '2023-03-01';
 
     changeModalState(modalState);
-     
     modals();
     tabs({
         headerSelector: '.glazing_slider ',
@@ -29,4 +29,5 @@ window.addEventListener('DOMContentLoaded', () => {
         display: 'inline-block'
     });
     forms(modalState);
+    timer('.container1', deadline);
 });

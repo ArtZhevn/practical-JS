@@ -4,7 +4,7 @@ export const changeModalState = (state) => {
     const windowForms = document.querySelectorAll('.balcon_icons_img');
     const windowWidths = document.querySelectorAll('#width');
     const windowHeights = document.querySelectorAll('#height');
-    const windowTypes = document.querySelectorAll('#view_type'); // ?
+    const windowTypes = document.querySelectorAll('#view_type');
     const windowProfiles = document.querySelectorAll('.checkbox');
 
     checkNumInputs('#width');
@@ -18,11 +18,7 @@ export const changeModalState = (state) => {
                         state[prop] = i;
                         break;
                     case 'INPUT':
-                        // if (elem.getAttribute('type') === 'radio') {
-                        //     state[prop] = i === 0 ? 'Холодное' : state[prop] = 'Тёплое';
-                        // } else {
                             state[prop] = elem.value;
-                        // }
                         break;
                     case 'SELECT':
                         state[prop] = elem.value;
